@@ -1,0 +1,393 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    background: #f4f7fb;
+    color: #24364a;
+    line-height: 1.9;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* صفحه اصلی */
+
+.hero {
+    background: linear-gradient(135deg, #102c46, #205d83, #3189a7);
+    color: white;
+    text-align: center;
+    padding: 75px 20px 85px;
+    border-radius: 0 0 45px 45px;
+}
+
+.hero-icon {
+    font-size: 65px;
+    margin-bottom: 8px;
+}
+
+.hero-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #b9dbea;
+}
+
+.hero h1 {
+    font-size: 30px;
+    margin: 8px 0;
+    font-weight: 800;
+}
+
+.hero p {
+    color: #e0edf4;
+    margin-bottom: 28px;
+}
+
+.start-btn {
+    display: inline-block;
+    background: white;
+    color: #194d6b;
+    padding: 10px 28px;
+    border-radius: 30px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.start-btn:hover {
+    background: #dceefa;
+    transform: translateY(-3px);
+}
+
+
+/* بخش اصلی */
+
+.container {
+    max-width: 1050px;
+    margin: 55px auto;
+    padding: 0 22px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-heading span {
+    color: #3685a8;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.section-heading h2 {
+    color: #173d5a;
+    font-size: 24px;
+    margin: 5px 0;
+}
+
+.section-heading p {
+    color: #8997a6;
+    font-size: 14px;
+}
+
+
+/* کارت دسته بندی */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.category-card {
+    background: white;
+    padding: 25px 20px;
+    border-radius: 20px;
+    border: 1px solid #e9eef4;
+    box-shadow: 0 6px 20px rgba(25, 60, 90, .045);
+    color: #253c50;
+    transition: .3s;
+}
+
+.category-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(25, 60, 90, .10);
+    border-color: #a9d3e4;
+}
+
+.category-icon {
+    width: 65px;
+    height: 65px;
+    background: #eef6fa;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.category-card h3 {
+    color: #174d70;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.category-card p {
+    font-size: 13px;
+    color: #82909e;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    color: #3285aa;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+
+/* سربرگ صفحات داخلی */
+
+.small-header {
+    background: linear-gradient(135deg, #153c59, #287b9e);
+    color: white;
+    text-align: center;
+    padding: 40px 15px;
+    border-radius: 0 0 35px 35px;
+}
+
+.category-header-icon {
+    font-size: 48px;
+}
+
+.small-header h1 {
+    font-size: 27px;
+    margin: 5px 0;
+}
+
+.small-header p {
+    color: #dceaf2;
+    font-size: 14px;
+}
+
+.back-btn {
+    display: inline-block;
+    color: white;
+    border: 1px solid rgba(255,255,255,.6);
+    border-radius: 25px;
+    padding: 7px 20px;
+    margin-top: 18px;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.back-btn:hover {
+    background: white;
+    color: #174d70;
+}
+
+
+/* کارت فایل ها */
+
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.file-card {
+    background: white;
+    padding: 22px;
+    border-radius: 19px;
+    border: 1px solid #e8edf2;
+    box-shadow: 0 5px 18px rgba(20, 50, 80, .05);
+    min-width: 0;
+    overflow: hidden;
+}
+
+.file-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.file-number {
+    color: #3383a4;
+    font-weight: 700;
+}
+
+.file-type {
+    background: #edf5f9;
+    color: #39748e;
+    border-radius: 15px;
+    padding: 3px 12px;
+    font-size: 11px;
+}
+
+.file-card h3 {
+    color: #1b4b6b;
+    font-size: 17px;
+    margin-bottom: 15px;
+    overflow-wrap: anywhere;
+}
+
+.media-area {
+    text-align: center;
+}
+
+.media-icon {
+    display: block;
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+audio {
+    width: 100%;
+    max-width: 100%;
+}
+
+.video-player {
+    width: 100%;
+    border-radius: 12px;
+    background: #172c3c;
+}
+
+.pdf-preview {
+    background: #f1f5f9;
+    border-radius: 13px;
+    padding: 20px;
+    text-align: center;
+}
+
+.pdf-preview span {
+    font-size: 45px;
+}
+
+.pdf-preview p {
+    color: #60788a;
+    font-size: 13px;
+}
+
+.comic-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #f5f7fa;
+}
+
+.view-btn {
+    display: block;
+    text-align: center;
+    background: #246e91;
+    color: white;
+    padding: 9px 15px;
+    border-radius: 12px;
+    margin-top: 14px;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.view-btn:hover {
+    background: #17465f;
+}
+
+
+/* بخش خالی */
+
+.empty-message {
+    background: white;
+    text-align: center;
+    padding: 45px 15px;
+    border-radius: 18px;
+    color: #82909e;
+}
+
+.empty-message span {
+    font-size: 45px;
+}
+
+.empty-message h3 {
+    color: #34556e;
+    font-size: 17px;
+}
+
+
+/* فوتر */
+
+footer {
+    background: #153b57;
+    color: white;
+    text-align: center;
+    padding: 23px 15px;
+    margin-top: 65px;
+}
+
+footer p {
+    color: #c3d8e5;
+    font-size: 12px;
+}
+
+
+/* موبایل */
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding: 55px 18px 65px;
+    }
+
+    .hero h1 {
+        font-size: 23px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 13px;
+    }
+
+    .category-card {
+        padding: 17px 13px;
+    }
+
+    .category-card h3 {
+        font-size: 15px;
+    }
+
+    .category-card p {
+        font-size: 11px;
+    }
+
+    .category-icon {
+        width: 53px;
+        height: 53px;
+        font-size: 28px;
+    }
+
+    .card-bottom {
+        font-size: 11px;
+    }
+
+    .file-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        margin: 35px auto;
+    }
+
+    .section-heading h2 {
+        font-size: 21px;
+    }
+
+}

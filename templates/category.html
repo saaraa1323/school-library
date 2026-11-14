@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ category.title }} | کتابخانه دیجیتال</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="small-header">
+
+    <div class="category-header-icon">
+        {{ category.icon }}
+    </div>
+
+    <h1>{{ category.title }}</h1>
+
+    <p>{{ category.description }}</p>
+
+    <a href="{{ url_for('home') }}" class="back-btn">
+        ← بازگشت به کتابخانه
+    </a>
+
+</header>
+
+
+<main class="container">
+
+    <div class="section-heading">
+        <span>محتوای منتخب</span>
+        <h2>آثار این بخش</h2>
+        <p>محتوای موردنظرت را انتخاب و مشاهده کن.</p>
+    </div>
+
+
+    {% if files %}
+
+    <div class="file-grid">
+
+        {% for item in files %}
+
+        {% set ext = item.name.rsplit('.', 1)[-1].lower() %}
+
+        {% set file_url = url_for(
+            'open_file',
+            category_id=category_id,
+            filename=item.name
+        ) %}
+
+        <div class="file-card">
+
+            <div class="file-card-top">
+                <span class="file-number">
+                    {{ loop.index }}
+                </span>
+
+                <span class="file-type">
+                    {{ ext.upper() }}
+                </span>
+            </div>
+
+
+            <h3>{{ item.title }}</h3>
+
+
+            {% if ext in ['mp3', 'wav', 'ogg'] %}
+
+                <div class="media-area">
+
+                    <span class="media-icon">🎧</span>
+
+                    <audio controls preload="none">
+                        <source src="{{ file_url }}"
+                                type="audio/{{ ext }}">
+                        مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
+                    </audio>
+
+                </div>
+
+
+            {% elif ext in ['mp4', 'webm'] %}
+
+                <video controls preload="none"
+                       class="video-player">
+
+                    <source src="{{ file_url }}"
+                            type="video/{{ ext }}">
+
+                    مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+
+                </video>
+
+
+            {% elif ext == 'pdf' %}
+
+                <div class="pdf-preview">
+
+                    <span>📕</span>
+
+                    <p>محتوای دیجیتال PDF</p>
+
+                </div>
+
+                <a href="{{ file_url }}"
+                   target="_blank"
+                   class="view-btn">
+
+                    مطالعه و مشاهده فایل
+
+                </a>
+
+
+            {% elif ext in ['jpg', 'jpeg', 'png', 'webp'] %}
+
+                <img src="{{ file_url }}"
+                     class="comic-image"
+                     alt="{{ item.title }}">
+
+                <a href="{{ file_url }}"
+                   target="_blank"
+                   class="view-btn">
+
+                    مشاهده تصویر
+
+                </a>
+
+
+            {% endif %}
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    {% else %}
+
+    <div class="empty-message">
+
+        <span>📂</span>
+
+        <h3>هنوز فایلی در این بخش قرار نگرفته است.</h3>
+
+        <p>به‌زودی محتوای جدید اضافه می‌شود.</p>
+
+    </div>
+
+    {% endif %}
+
+</main>
+
+
+<footer>
+    کتابخانه دیجیتال مدرسه
+</footer>
+
+</body>
+</html>

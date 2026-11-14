@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>کتابخانه دیجیتال مدرسه</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-icon">📚</div>
+
+        <span class="hero-label">DIGITAL LIBRARY</span>
+
+        <h1>کتابخانه دیجیتال مدرسه</h1>
+
+        <p>
+            دنیایی از کتاب، دانش، خلاقیت و یادگیری
+        </p>
+
+        <a href="#categories" class="start-btn">
+            کشف دنیای محتوا
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="container" id="categories">
+
+    <div class="section-heading">
+        <span>کتابخانه من</span>
+        <h2>چه چیزی دوست داری ببینی؟</h2>
+        <p>دسته‌بندی موردنظرت را انتخاب کن.</p>
+    </div>
+
+
+    <div class="category-grid">
+
+        {% for key, item in categories.items() %}
+
+        <a href="{{ url_for('show_category', category_id=key) }}"
+           class="category-card">
+
+            <div class="category-icon">
+                {{ item.icon }}
+            </div>
+
+            <h3>{{ item.title }}</h3>
+
+            <p>{{ item.description }}</p>
+
+            <div class="card-bottom">
+                <span>مشاهده محتوا</span>
+                <span>←</span>
+            </div>
+
+        </a>
+
+        {% endfor %}
+
+    </div>
+
+</main>
+
+
+<footer>
+    <div>📚 کتابخانه دیجیتال مدرسه</div>
+    <p>یادگیری، تجربه‌ای فراتر از کتاب</p>
+</footer>
+
+</body>
+</html>
